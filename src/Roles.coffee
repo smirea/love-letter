@@ -9,7 +9,7 @@ class Role
     target: null
 
     constructor: (@player, @target) ->
-        @name = @constructor.name
+        @name = @constructor.toString()
 
     set_player: (@player) ->
 

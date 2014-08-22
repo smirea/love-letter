@@ -27,7 +27,7 @@ class Player
         if card = @deck.pop()
             instance = new card @
             @cards.push instance
-            @log "#{@name} draws a new card: #{instance.name}"
+            @log "#{@name} draws a card: #{instance.name}"
         else if @cards.length is 0
             @warn "#{@name} has no more cards to draw"
             @die()
@@ -61,7 +61,7 @@ class Player
         card = _.first @cards.splice index, 1
         card.set_target target
 
-        @log "#{@name}(#{@role().name}) plays #{card.name} on #{target.name}(#{target.role().name}), args:", args...
+        @log "#{@name}:#{@role().name} plays #{card.name} on #{target.name}:#{target.role().name}:, args:", args...
 
         if target.is_immune
             return @warn "#{target.name} is Immune, nothing happens"
